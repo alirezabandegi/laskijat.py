@@ -37,26 +37,28 @@ class Laskija:
 ### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
 
 class MonenLaskija(Laskija):
-    def summaa(self, *args):
-        """Palauttaa kahden luvun summan.
+    """Luokka, joka toteuttaa eri laskutoimituksia.
 
-        :param a: summan ensimmäinen luku
-        :type a: Union[int, float]
-        :param b: summan toinen luku
-        :type b: Union[int, float]
-        :return: lukujen a ja b summa
+    Julkiset metodit:
+        summaa(Union[int, float])
+        kerro(Union[int, float])
+    """
+    def summaa(self, *args):
+        """Palauttaa monta luvun summan.
+
+        :param args: summan kaikki luku
+        :type args: Union[int, float]
+        :return: lukujen args:ssa summa
         :rtype: Union[int, float]
         """
         return sum(args)
     
     def kerro(self, *args):
-        """Palauttaa kahden luvun tulon.
+        """Palauttaa monta luvun tulon.
 
-        :param a: tulon ensimmäinen luku
-        :type a: Union[int, float]
-        :param b: tulon toinen luku
-        :type b: Union[int, float]
-        :return: lukujen a ja b tulo
+        :param args: tulon kaikki luku
+        :type args: Union[int, float]
+        :return: lukujen args:ssa tulo
         :rtype: Union[int, float]
         """
         tulo = 1
@@ -65,6 +67,13 @@ class MonenLaskija(Laskija):
         return tulo
 
 def argumenttien_tulostaja(**kwargs):
+    """Tulostaa sanakirjan sisällöt.
+
+        :param kwargs: tlostaa kaikki sanakirjan sisällöt
+        :type kwargs: Union[str ,int, float]
+        :return: kaikki sanakirjan sisällöt
+        :rtype: Union[str]
+        """
     for avainsana, arvo in kwargs.items():
         print(f'Argumentin "{avainsana}" arvo on {arvo}.')
         
